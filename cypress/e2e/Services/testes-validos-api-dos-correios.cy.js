@@ -1,6 +1,6 @@
-describe('Busca por um CEP e valida o resultado', () => { 
+describe('Buscar por um CEP válido e validar o response', () => { 
     
-    it('Caso valido 1', () => { 
+    it('Validação do response para CEP do RS', () => { 
       
       cy.request({  
 
@@ -19,7 +19,7 @@ describe('Busca por um CEP e valida o resultado', () => {
     })
 
 
-    it('Caso valido 2', () => { 
+    it('Validação do response para CEP do SP', () => { 
       
       cy.request({ 
 
@@ -38,7 +38,7 @@ describe('Busca por um CEP e valida o resultado', () => {
     })
 
 
-it('Caso valido 3', () => { 
+it('Validação do response para CEP do RJ', () => { 
       
       cy.request({ 
 
@@ -57,7 +57,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 4', () => { 
+    it('Validação do response para CEP do DF', () => { 
       
       cy.request({ 
 
@@ -76,7 +76,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 5', () => { 
+    it('Validação do response para CEP do MG', () => { 
       
       cy.request({ 
 
@@ -95,7 +95,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 6', () => { 
+    it('Validação do response para CEP do CE', () => { 
       
       cy.request({ 
 
@@ -113,7 +113,7 @@ it('Caso valido 3', () => {
       })
     })
 
-    it('Caso valido 7', () => { 
+    it('Validação do response para CEP do PR', () => { 
       
       cy.request({ 
 
@@ -132,7 +132,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 8', () => { 
+    it('Validação do response para CEP do GO', () => { 
       
       cy.request({ 
 
@@ -151,7 +151,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 9', () => { 
+    it('Validação do response para CEP do MT', () => { 
       
       cy.request({ 
 
@@ -170,7 +170,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 10', () => { 
+    it('Validação do response para CEP do MS', () => { 
       
       cy.request({ 
 
@@ -189,7 +189,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 11', () => { 
+    it('Validação do response para CEP do BA', () => { 
       
       cy.request({ 
 
@@ -208,7 +208,7 @@ it('Caso valido 3', () => {
     })
 
 
-    it('Caso valido 12', () => { 
+    it('Validação do response para CEP do AM', () => { 
       
       cy.request({ 
 
@@ -222,85 +222,6 @@ it('Caso valido 3', () => {
         expect(response.body.address).to.equal('Rua Monsenhor Coutinho'); 
         expect(response.body.city).to.equal('Manaus');
         expect(response.body.state).to.equal('AM')
-
-      })
-    })
-
-    it('Caso invalido 1', () => { 
-      
-      cy.request({ 
-
-        failOnStatusCode: false, 
-
-        method: 'GET', 
-
-        url: 'https://cep-v2-americanas-npf.b2w.io/cep/00000000' 
-
-      }).then((response) => { 
-
-        expect(response.status).to.equal(404);
-        expect(response.body.message).to.equal('Recurso não encontrado') 
-
-
-      })
-    })
-
-
-    it('Caso invalido 2', () => { 
-      
-      cy.request({ 
-
-        failOnStatusCode: false, 
-
-        method: 'GET', 
-
-        url: 'https://cep-v2-americanas-npf.b2w.io/cep/0000000' 
-
-      }).then((response) => { 
-
-        expect(response.status).to.equal(404); 
-        expect(response.body.message).to.equal('Recurso não encontrado')
-
-
-      })
-    })   
-
-
-    it('Caso invalido 3', () => { 
-      
-      cy.request({ 
-
-        failOnStatusCode: false, 
-
-        method: 'GET', 
-
-        url: 'https://cep-v2-americanas-npf.b2w.io/cep/01234567' 
-
-      }).then((response) => { 
-
-        expect(response.status).to.equal(404); 
-        expect(response.body.message).to.equal('Recurso não encontrado')
-
-
-      })
-    })   
-
-
-    it('Caso invalido 4', () => { 
-      
-      cy.request({ 
-
-        failOnStatusCode: false, 
-
-        method: 'GET', 
-
-        url: 'https://cep-v2-americanas-npf.b2w.io/cep/01010101' 
-
-      }).then((response) => { 
-
-        expect(response.status).to.equal(404); 
-        expect(response.body.message).to.equal('Recurso não encontrado')
-
 
       })
     })
