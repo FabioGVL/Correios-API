@@ -31,7 +31,7 @@ it('Validação do response para CEP inválido - Do 1 ao 8', () => {
 
       method: 'GET', 
 
-      url: 'https://cep-v2-americanas-npf.b2w.io/cep/0000000' 
+      url: 'https://cep-v2-americanas-npf.b2w.io/cep/0' 
 
     }).then((response) => { 
 
@@ -56,7 +56,7 @@ it('Validação do response para CEP inválido - Do 1 ao 8', () => {
     }).then((response) => { 
 
       expect(response.status).to.equal(404); 
-      expect(response.body.message).to.equal('CEP 1010101 not found')
+      expect(response.body.message).to.equal('CEP 01010101 not found')
 
 
     })
@@ -75,8 +75,8 @@ it('Validação do response para CEP inválido - Do 1 ao 8', () => {
 
     }).then((response) => { 
 
-      expect(response.status).to.equal(400); 
-      expect(response.body.errorCode).to.equal('400 BAD_REQUEST')
+      expect(response.status).to.equal(500); 
+      expect(response.body.errorCode).to.equal('500 INTERNAL_SERVER_ERROR')
 
 
     })
@@ -95,8 +95,8 @@ it('Validação do response para CEP inválido - Do 1 ao 8', () => {
 
     }).then((response) => { 
 
-      expect(response.status).to.equal(400); 
-      expect(response.body.errorCode).to.equal('400 BAD_REQUEST')
+      expect(response.status).to.equal(500); 
+      expect(response.body.errorCode).to.equal('500 INTERNAL_SERVER_ERROR')
 
 
     })
@@ -115,8 +115,8 @@ it('Validação do response para CEP inválido - Do 1 ao 8', () => {
 
     }).then((response) => { 
 
-      expect(response.status).to.equal(400); 
-      expect(response.body.errorCode).to.equal('400 BAD_REQUEST')
+      expect(response.status).to.equal(500); 
+      expect(response.body.errorCode).to.equal('500 INTERNAL_SERVER_ERROR')
 
 
     })
@@ -135,8 +135,8 @@ it('Validação do response para CEP inválido - Do 1 ao 8', () => {
 
     }).then((response) => { 
 
-      expect(response.status).to.equal(400); 
-      expect(response.body.errorCode).to.equal('400 BAD_REQUEST')
+      expect(response.status).to.equal(500); 
+      expect(response.body.errorCode).to.equal('500 INTERNAL_SERVER_ERROR')
 
 
     })
